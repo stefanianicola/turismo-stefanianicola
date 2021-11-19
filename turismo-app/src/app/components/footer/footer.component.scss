@@ -1,0 +1,13 @@
+@import '../header/header.component.scss';
+
+.navbar {
+  height: 45px;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+}
