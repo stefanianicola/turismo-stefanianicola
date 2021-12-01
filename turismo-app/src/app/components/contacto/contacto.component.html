@@ -1,46 +1,41 @@
-<div class="container mt-5">
-  <form class="row g-3 form-contact" id="contacto">
+<div class="container mt-5" >
+  <form [formGroup]="contactForm" class="row g-3 form-contact"
+  (ngSubmit)="submitForm()"
+
+  >
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress2" class="form-label">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input type="firstName" class="form-control" id="firstName" formControlName="firstName" required>
     </div>
     <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="lastName" class="form-label"> Apellido</label>
+      <input type="lastName" class="form-control" id="lastName" formControlName="lastName" >
     </div>
-    <div class="col-md-4">
-      <label for="inputState" class="form-label">State</label>
-      <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
+
+    <div class="row m-0 p-0" formGroupName="address">
+      <h5 class="col-12">Address</h5>
+
+      <div class="col-6">
+        <label for="street" class="form-label">street</label>
+        <input type="text" class="form-control" id="street" formControlName="street">
+      </div>
+      <div class="col-6">
+        <label for="city" class="form-label">city</label>
+        <input type="text" class="form-control" id="city" formControlName="city">
+      </div>
+      <div class="col-12">
+        <label for="email" class="form-label">email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
       </div>
     </div>
+
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <label for="question" class="form-label">question</label>
+      <textarea type="text" class="form-control" id="question" formControlName="question"></textarea>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Enviar</button>
     </div>
   </form>
 </div>
