@@ -16,7 +16,6 @@ contactForm = this.fb.group({
     city: [''],
     email: ['',Validators.required]
   }),
-  question:['', Validators.required]
 })
 
   constructor(private fb: FormBuilder) { }

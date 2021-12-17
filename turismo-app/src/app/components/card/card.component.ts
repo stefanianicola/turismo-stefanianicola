@@ -1,6 +1,7 @@
+import { PeliculasService } from '../../services/peliculas.service';
 import { Component, OnInit } from '@angular/core';
-import { Cards } from 'src/app/models/card.model';
-import { CardServiceService } from 'src/app/services/card-service.service';
+import { Movie } from '../../models/cartelera-response';
+
 
 @Component({
   selector: 'app-card',
@@ -9,12 +10,12 @@ import { CardServiceService } from 'src/app/services/card-service.service';
 })
 export class CardComponent implements OnInit {
 
-  public viajes: Cards[] = []
+  public movies: Movie[] = []
 
-  constructor(private cardService: CardServiceService){}
+  constructor(private pelisService: PeliculasService){}
 
   ngOnInit(): void {
-    this.cardService.getCards().subscribe(res => this.viajes = res);
+    this.pelisService.getCartelera().subscribe((movies) => this.movies = movies);
 
   }
 

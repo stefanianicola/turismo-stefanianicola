@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardComponent } from './components/card/card.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     HomeComponent,
     ContactoComponent,
-    CardComponent
+    CardComponent,
+    CarritoComponent
   ],
 
   imports: [
@@ -25,7 +28,8 @@ import { CardComponent } from './components/card/card.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
